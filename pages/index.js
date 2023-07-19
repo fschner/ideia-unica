@@ -1,9 +1,40 @@
-function Home(){
-    return <div>
-        <h1>Teste!</h1>
-        <h2>Teste Git</h2>
-        <h3>Teste Vercel</h3></div>
-    
-}
+import { useState } from 'react';
 
-export default Home
+const Formulario = () => {
+  const [nome, setNome] = useState('');
+  const [email, setEmail] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Aqui você pode enviar os dados do formulário para onde for necessário
+    console.log({ nome, email });
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <div className="form-group">
+        <label htmlFor="nome">Nome:</label>
+        <input
+          type="text"
+          className="form-control"
+          id="nome"
+          value={nome}
+          onChange={(e) => setNome(e.target.value)}
+        />
+      </div>
+      <div className="form-group">
+        <label htmlFor="email">Email:</label>
+        <input
+          type="email"
+          className="form-control"
+          id="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+      </div>
+      <button type="submit" className="btn btn-primary">Enviar</button>
+    </form>
+  );
+};
+
+export default Formulario;
