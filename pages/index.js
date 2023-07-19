@@ -12,7 +12,10 @@ const Formulario = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div className="form-group">
+          
+    <div className="container">
+    <h3 className="mt-5">Formulario de Cadastro</h3>
+      <div className="form-group col-4 mt-3">
         <label htmlFor="nome">Nome:</label>
         <input
           type="text"
@@ -22,7 +25,7 @@ const Formulario = () => {
           onChange={(e) => setNome(e.target.value)}
         />
       </div>
-      <div className="form-group">
+      <div className="form-group col-4 mt-3">
         <label htmlFor="email">Email:</label>
         <input
           type="email"
@@ -32,7 +35,10 @@ const Formulario = () => {
           onChange={(e) => setEmail(e.target.value)}
         />
       </div>
-      <button type="submit" className="btn btn-primary">Enviar</button>
+      <button type="submit" className="btn btn-primary mt-4">Enviar</button>
+      
+      </div>
+
     </form>
   );
 };
